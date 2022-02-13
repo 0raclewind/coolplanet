@@ -17,7 +17,7 @@ interface UserInfo {
 
 export default function Detail() {
     const [user, setUser] = useState<UserInfo | null>(null);
-    const [notFound, setNotFound] = useState<string | null>(null);
+    const [notFound, setNotFound] = useState<boolean>(false);
     const { id } = useParams();
 
 
@@ -25,7 +25,7 @@ export default function Detail() {
         fetch('http://localhost:4000/users/' + id)
         .then(response => {
             if (response.status === 404) {
-                setNotFound("Not found");
+                setNotFound(true);
             }
             
             return response.json();
