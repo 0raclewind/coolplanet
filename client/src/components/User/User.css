@@ -1,0 +1,16 @@
+.user {
+  background-color: #1f506d;
+  text-align: left;
+  margin-top: 5px;
+  display: block;
+  padding: 5px 15px;
+  color: #ccc;
+  text-decoration: none;
+  width: 170px;
+  border-radius: 5px;
+}
+
+.user:hover {
+  background-color: #2a6b90;
+  color: #fff;
+}

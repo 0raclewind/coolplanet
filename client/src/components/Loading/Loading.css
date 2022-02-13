@@ -1,0 +1,44 @@
+.loading-div {
+  max-width: 400px;
+  margin: 100px auto 0 auto;
+}
+
+.loading {
+  position: relative;
+  width: 56px;
+  height: 60px;
+  margin: 0 auto 0 auto;
+}
+
+.loading div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 8px;
+  background: #999;
+  animation: loading 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.loading div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+.loading div:nth-child(2) {
+  left: 24px;
+  animation-delay: -0.12s;
+}
+.loading div:nth-child(3) {
+  left: 40px;
+  animation-delay: 0;
+}
+
+@keyframes loading {
+  0% {
+    top: 5px;
+    height: 50px;
+  }
+  50%,
+  100% {
+    top: 20px;
+    height: 20px;
+  }
+}
