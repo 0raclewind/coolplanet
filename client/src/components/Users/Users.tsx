@@ -15,6 +15,8 @@ export default function Users() {
         .then(data => {
             setUsers(data);
         })
+        
+        document.title = "List Screen"
     }, []);
 
     if (users) {

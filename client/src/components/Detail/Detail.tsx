@@ -33,6 +33,8 @@ export default function Detail() {
         .then(data => {
             setUser(data);
         })
+
+        document.title = "Detail Screen";
     }, []);
     
     if (user) {
