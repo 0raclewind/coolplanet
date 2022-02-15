@@ -2,23 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import Loading from '../Loading/Loading';
 import './Detail.css';
-
-interface UserInfo {
-    id: number;
-    first_name: string;
-    last_name: string;
-    email: string;
-    gender: string;
-    company: {
-        name: string;
-        department: string;
-    }
-}
+import { UserInfo } from '../Users/Users'
 
 export default function Detail() {
     const [user, setUser] = useState<UserInfo | null>(null);
     const [notFound, setNotFound] = useState<boolean>(false);
     const { id } = useParams();
+    
 
 
     useEffect(() => {
