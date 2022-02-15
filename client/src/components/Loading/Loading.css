@@ -42,3 +42,21 @@
     height: 20px;
   }
 }
+
+svg {
+  margin-top: 50px;
+}
+
+#cog {
+  animation: rotate 3s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
