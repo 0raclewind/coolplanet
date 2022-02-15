@@ -3,9 +3,20 @@ import User from '../User/User';
 import './Users.css';
 import Loading from '../Loading/Loading';
 
+export interface UserInfo {
+    id: number;
+    first_name: string;
+    last_name: string;
+    email: string;
+    gender: string;
+    company: {
+        name: string;
+        department: string;
+    }
+}
 
 export default function Users() {
-    const [users, setUsers] = useState<any[] | null>(null)
+    const [users, setUsers] = useState<UserInfo[] | null>(null)
 
     useEffect(() => {
         fetch('http://localhost:4000/users')
