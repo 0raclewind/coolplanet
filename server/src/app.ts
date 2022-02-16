@@ -17,12 +17,15 @@ app.get("/users", (req: Request, res: Response) => {
 })
 
 app.get("/users/:id", (req: Request, res: Response) => {
-    users.map((user: { id: number; }) => {
-        if (user.id === +req.params.id) {
-            res.json(user);
-        }
+    const userIndex = users.findIndex((user: { id: number; }) => {
+        return user.id === +req.params.id
     })
-    res.sendStatus(404);
+
+    if (userIndex === -1) {
+        res.sendStatus(404)
+    } else {
+        res.json(users[userIndex])
+    }
 })
 
 app.listen(PORT, () => {
